@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyam Mishra &amp; Co. | Chartered Accountants — Audit, Tax &amp; Compliance</title>
+<meta name="description" content="Priyam Mishra & Co., Chartered Accountants. Audit &amp; assurance, taxation, financial advisory and regulatory compliance for businesses across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,560;0,9..144,650;1,9..144,450&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10233D;
+    --ink-2:#16324F;
+    --paper:#F3EFE6;
+    --paper-2:#EAE4D4;
+    --line:#CFC6AE;
+    --line-soft:#DCD5C2;
+    --brass:#A9832E;
+    --brass-light:#C9A24E;
+    --seal:#7B2C2C;
+    --charcoal:#232320;
+    --ivory:#FBF9F3;
+    --ok:#3E5C48;
+
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'IBM Plex Sans', -apple-system, sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- ledger texture ---------- */
+  .ledger-bg{
+    background-image:
+      repeating-linear-gradient(to bottom, transparent, transparent 37px, var(--line-soft) 38px);
+    background-position: 0 8px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(243,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-weight:650; font-size:16px; color:var(--ink);
+    flex-shrink:0;
+  }
+  .brand-name{font-family:var(--serif); font-weight:560; font-size:19px; letter-spacing:0.01em; color:var(--ink);}
+  .brand-name span{display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:0.16em; color:var(--brass); font-weight:500; margin-top:2px;}
+
+  .nav-links{display:flex; gap:34px; align-items:center;}
+  .nav-links a{
+    font-size:13.5px; font-weight:500; color:var(--ink-2);
+    letter-spacing:0.01em;
+    position:relative; padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--brass);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.04em;
+    background:var(--ink); color:var(--ivory);
+    padding:10px 18px; border-radius:2px;
+    border:1px solid var(--ink);
+    transition:background .2s ease, color .2s ease;
+  }
+  .nav-cta:hover{background:var(--ink-2);}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:88px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--brass); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--brass);}
+  .hero h1{
+    font-family:var(--serif); font-weight:560; font-size:clamp(38px,4.6vw,60px);
+    line-height:1.08; color:var(--ink); letter-spacing:-0.01em; margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic; font-weight:450; color:var(--seal);}
+  .hero p.lede{
+    font-size:17px; color:#3c4550; max-width:480px; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px;}
+  .btn{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.03em;
+    padding:14px 24px; border-radius:2px; display:inline-block; text-align:center;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{background:var(--seal); color:var(--ivory); border:1px solid var(--seal);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(123,44,44,0.25);}
+  .btn-ghost{background:transparent; color:var(--ink); border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--ink); transform:translateY(-2px);}
+
+  .hero-meta{display:flex; gap:34px; padding-top:26px; border-top:1px solid var(--line);}
+  .hero-meta div{font-family:var(--mono);}
+  .hero-meta .num{font-size:22px; color:var(--ink); font-weight:500;}
+  .hero-meta .lbl{font-size:11px; letter-spacing:0.06em; color:#6b6559; margin-top:3px;}
+
+  /* seal / signature element */
+  .seal-wrap{
+    position:relative; width:100%; aspect-ratio:1/1; max-width:360px; margin:0 auto;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .seal-ring{
+    position:absolute; inset:0;
+    animation:spin 42s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .seal-core{
+    width:64%; height:64%; border-radius:50%;
+    background:var(--ivory);
+    border:2px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    text-align:center; padding:18px;
+    box-shadow:0 18px 40px rgba(16,35,61,0.16), inset 0 0 0 6px rgba(169,131,46,0.08);
+  }
+  .seal-core .mono-sm{font-family:var(--mono); font-size:10px; letter-spacing:0.1em; color:var(--brass); margin-bottom:6px;}
+  .seal-core .serif-mid{font-family:var(--serif); font-size:22px; color:var(--ink); font-weight:560; line-height:1.15;}
+  .seal-core .check{
+    width:30px; height:30px; border-radius:50%; background:var(--ok); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin-top:10px; font-size:15px;
+  }
+
+  /* ---------- stats strip ---------- */
+  .stats-strip{
+    background:var(--ink); color:var(--ivory);
+    padding:26px 0;
+  }
+  .stats-strip .wrap{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+  }
+  .stat{border-left:1px solid rgba(255,255,255,0.18); padding-left:18px;}
+  .stat .num{font-family:var(--mono); font-size:28px; color:var(--brass-light);}
+  .stat .lbl{font-family:var(--sans); font-size:12.5px; color:#c9cdd6; margin-top:4px;}
+
+  /* ---------- section shell ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-family:var(--serif); font-size:clamp(28px,3.2vw,40px); font-weight:560; color:var(--ink);
+    letter-spacing:-0.01em; line-height:1.15;
+  }
+  .section-head p{margin-top:16px; color:#4a5261; font-size:15.5px; max-width:540px;}
+
+  /* ---------- about ---------- */
+  .about{background:var(--ivory); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .about-quote{
+    border-left:2px solid var(--seal); padding-left:24px;
+  }
+  .about-quote p{
+    font-family:var(--serif); font-style:italic; font-size:24px; line-height:1.4; color:var(--ink);
+  }
+  .about-quote .attrib{
+    margin-top:18px; font-family:var(--mono); font-size:12px; letter-spacing:0.04em; color:var(--brass);
+  }
+  .about-body p{color:#464e5a; font-size:15.5px; margin-bottom:16px;}
+  .about-creds{display:flex; gap:28px; margin-top:28px; flex-wrap:wrap;}
+  .cred{font-family:var(--mono); font-size:11.5px; color:var(--ink-2); border:1px solid var(--line); padding:8px 12px; border-radius:2px; letter-spacing:0.03em;}
+
+  /* ---------- services ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .service-card{
+    background:var(--paper); padding:38px; transition:background .2s ease;
+  }
+  .service-card:hover{background:var(--ivory);}
+  .service-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:22px;}
+  .service-icon{width:46px; height:46px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center;}
+  .service-tag{font-family:var(--mono); font-size:11px; color:#8a8374; letter-spacing:0.04em;}
+  .service-card h3{font-family:var(--serif); font-size:23px; font-weight:560; color:var(--ink); margin-bottom:12px;}
+  .service-card p.desc{color:#4a5261; font-size:14.5px; margin-bottom:18px;}
+  .service-list{border-top:1px solid var(--line-soft); padding-top:14px;}
+  .service-list li{
+    font-size:13.5px; color:#3c4550; padding:6px 0; display:flex; gap:10px; align-items:baseline;
+  }
+  .service-list li::before{content:'—'; color:var(--brass); flex-shrink:0;}
+
+  /* ---------- process ---------- */
+  .process{background:var(--ink); color:var(--ivory);}
+  .process .section-head h2{color:var(--ivory);}
+  .process .section-head p{color:#b7bdc9;}
+  .process .eyebrow{color:var(--brass-light);}
+  .process .eyebrow::before{background:var(--brass-light);}
+  .process-row{display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:1px solid rgba(255,255,255,0.18);}
+  .proc-step{padding:28px 20px 0; border-right:1px solid rgba(255,255,255,0.18);}
+  .proc-step:last-child{border-right:none;}
+  .proc-step .idx{font-family:var(--mono); font-size:12px; color:var(--brass-light); margin-bottom:14px;}
+  .proc-step h4{font-family:var(--serif); font-size:18px; font-weight:560; margin-bottom:10px;}
+  .proc-step p{font-size:13px; color:#b7bdc9;}
+
+  /* ---------- industries ---------- */
+  .industries .wrap{display:grid; grid-template-columns:0.7fr 1.3fr; gap:56px; align-items:center;}
+  .industry-tags{display:flex; flex-wrap:wrap; gap:12px;}
+  .industry-tags span{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.02em;
+    padding:11px 18px; border:1px solid var(--line); border-radius:20px; color:var(--ink-2);
+    background:var(--ivory);
+  }
+
+  /* ---------- why us ---------- */
+  .why{background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:36px;}
+  .why-item .num{font-family:var(--serif); font-style:italic; font-size:38px; color:var(--seal); margin-bottom:14px;}
+  .why-item h4{font-family:var(--sans); font-weight:600; font-size:15.5px; color:var(--ink); margin-bottom:8px;}
+  .why-item p{font-size:13.5px; color:#54595f;}
+
+  /* ---------- team ---------- */
+  .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .team-grid-solo{grid-template-columns:1fr; max-width:400px; border:1px solid var(--line);}
+  .team-card{background:var(--ivory); padding:34px;}
+  .avatar{
+    width:56px; height:56px; border-radius:50%; background:var(--ink); color:var(--ivory);
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:19px; margin-bottom:20px;
+  }
+  .team-card h4{font-family:var(--serif); font-size:19px; color:var(--ink); margin-bottom:4px;}
+  .team-card .role{font-family:var(--mono); font-size:11.5px; color:var(--brass); letter-spacing:0.03em; margin-bottom:14px;}
+  .team-card p{font-size:13.5px; color:#54595f;}
+
+  /* ---------- testimonials ---------- */
+  .testimonials{background:var(--ivory); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .test-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .test-card{
+    border:1px solid var(--line); padding:28px; background:var(--paper); position:relative;
+  }
+  .test-card .mark{font-family:var(--serif); font-size:44px; color:var(--brass); line-height:1; margin-bottom:6px;}
+  .test-card p.quote{font-size:14.5px; color:#3c4550; margin-bottom:20px; font-style:italic;}
+  .test-card .who{font-family:var(--mono); font-size:11.5px; color:var(--ink-2); border-top:1px solid var(--line-soft); padding-top:14px;}
+
+  /* ---------- contact ---------- */
+  .contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .contact-info h3{font-family:var(--serif); font-size:26px; color:var(--ink); margin-bottom:20px;}
+  .info-row{display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--line);}
+  .info-row:last-of-type{border-bottom:1px solid var(--line);}
+  .info-row .lbl{font-family:var(--mono); font-size:11px; letter-spacing:0.05em; color:var(--brass); width:110px; flex-shrink:0; padding-top:2px;}
+  .info-row .val{font-size:14.5px; color:#3c4550;}
+
+  form{display:flex; flex-direction:column; gap:16px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{font-family:var(--mono); font-size:11px; letter-spacing:0.05em; color:var(--ink-2); margin-bottom:6px; display:block;}
+  input, select, textarea{
+    width:100%; background:var(--ivory); border:1px solid var(--line); border-radius:2px;
+    padding:12px 14px; font-family:var(--sans); font-size:14px; color:var(--charcoal);
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--brass); outline-offset:1px; border-color:var(--brass);}
+  textarea{resize:vertical; min-height:100px;}
+  .submit-btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.03em;
+    background:var(--seal); color:var(--ivory); border:1px solid var(--seal);
+    padding:14px 24px; border-radius:2px; cursor:pointer; align-self:flex-start;
+    transition:transform .2s ease;
+  }
+  .submit-btn:hover{transform:translateY(-2px);}
+  .form-note{font-size:12px; color:#8a8374; margin-top:-4px;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink); color:#c9cdd6; padding:56px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.14);}
+  .footer-brand .brand-mark{border-color:var(--ivory); color:var(--ivory);}
+  .footer-brand .brand-name{color:var(--ivory);}
+  .footer-brand p{font-size:13px; color:#9aa0ac; margin-top:16px; max-width:280px;}
+  .footer-col h5{font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--brass-light); text-transform:uppercase; margin-bottom:16px;}
+  .footer-col a{display:block; font-size:13.5px; color:#c9cdd6; padding:5px 0;}
+  .footer-col a:hover{color:var(--ivory);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:24px; flex-wrap:wrap; gap:12px;}
+  .footer-bottom p{font-size:12px; color:#8890a0; font-family:var(--mono);}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .nav-links{display:none;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .seal-wrap{margin-top:20px;}
+    .stats-strip .wrap{grid-template-columns:repeat(2,1fr); row-gap:24px;}
+    .about .wrap{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:repeat(2,1fr);}
+    .proc-step{border-bottom:1px solid rgba(255,255,255,0.18); padding-bottom:24px;}
+    .industries .wrap{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr); row-gap:32px;}
+    .team-grid{grid-template-columns:1fr;}
+    .test-grid{grid-template-columns:1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr; row-gap:32px;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .hero{padding:60px 0 40px;}
+    .hero-meta{flex-wrap:wrap; row-gap:16px;}
+    .footer-top{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-mark">PM</div>
+      <div class="brand-name">Priyam Mishra &amp; Co.
+        <span>CHARTERED ACCOUNTANTS</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why Us</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Book a Consultation</a>
+  </div>
+</header>
+
+<section class="hero ledger-bg">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Chartered Accountants · Lucknow, India</div>
+      <h1>Every filing precise.<br>Every number <em>defensible</em>.</h1>
+      <p class="lede">Priyam Mishra &amp; Co. handles audit, taxation, financial advisory and regulatory compliance for founders and finance teams who would rather run their business than chase a notice.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="#services" class="btn btn-ghost">Explore Our Services</a>
+      </div>
+      <div class="hero-meta">
+        <div><div class="num">5+</div><div class="lbl">YEARS IN PRACTICE</div></div>
+        <div><div class="num">5,000+</div><div class="lbl">CLIENTS SERVED</div></div>
+        <div><div class="num">12</div><div class="lbl">SECTORS COVERED</div></div>
+        <div><div class="num">0</div><div class="lbl">MISSED DEADLINES</div></div>
+      </div>
+    </div>
+    <div class="seal-wrap">
+      <svg class="seal-ring" viewBox="0 0 300 300" width="100%" height="100%">
+        <defs>
+          <path id="circlePath" d="M150,150 m-118,0 a118,118 0 1,1 236,0 a118,118 0 1,1 -236,0"/>
+        </defs>
+        <circle cx="150" cy="150" r="145" fill="none" stroke="#A9832E" stroke-width="1" opacity="0.4"/>
+        <circle cx="150" cy="150" r="118" fill="none" stroke="#10233D" stroke-width="1.2" opacity="0.55"/>
+        <text font-family="IBM Plex Mono" font-size="11.5" letter-spacing="3.5" fill="#7B2C2C">
+          <textPath href="#circlePath" startOffset="0%">PRIYAM MISHRA &amp; CO. · CHARTERED ACCOUNTANTS ·</textPath>
+        </text>
+      </svg>
+      <div class="seal-core">
+        <div class="mono-sm">EST. 2021 · ICAI REG.</div>
+        <div class="serif-mid">Audit &middot; Tax<br>Compliance</div>
+        <div class="check">✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="wrap">
+    <div class="stat"><div class="num">₹450cr+</div><div class="lbl">Assets under audit annually</div></div>
+    <div class="stat"><div class="num">1,200+</div><div class="lbl">Returns filed each year</div></div>
+    <div class="stat"><div class="num">98%</div><div class="lbl">Client retention rate</div></div>
+    <div class="stat"><div class="num">24hr</div><div class="lbl">Average query response time</div></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-quote">
+      <p>"A clean audit trail is not paperwork &mdash; it is the evidence that a business can be trusted with someone else's money."</p>
+      <div class="attrib">PRIYAM MISHRA, FCA — FOUNDER</div>
+    </div>
+    <div class="about-body">
+      <p>Priyam Mishra &amp; Co. is a full-service Chartered Accountancy firm based in Lucknow, built for businesses that need more than a once-a-year tax filing. We work as an extension of your finance function &mdash; reviewing controls, closing books, filing returns and standing beside you when a regulator asks a question.</p>
+      <p>Our clients span EdTech, BFSI, BPO, manufacturing, real estate and early-stage startups. What they share is a need for accuracy that holds up under scrutiny, and advice that accounts for how their business actually runs, not just what the ledger says.</p>
+      <div class="about-creds">
+        <div class="cred">FCA, ICAI Member</div>
+        <div class="cred">Registered Tax Auditor</div>
+        <div class="cred">GST Practitioner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Four disciplines, one accountable team</h2>
+      <p>Each engagement is led by a qualified Chartered Accountant, not handed off to a call centre. Here is where we spend most of our time.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10233D" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="service-tag">01 / AUDIT</div>
+        </div>
+        <h3>Audit &amp; Assurance</h3>
+        <p class="desc">Independent, evidence-based audits that satisfy statutory requirements and give management an honest view of the numbers.</p>
+        <ul class="service-list">
+          <li>Statutory audit under Companies Act</li>
+          <li>Tax audit under Section 44AB</li>
+          <li>Internal &amp; management audit</li>
+          <li>Stock &amp; concurrent audit for banks/NBFCs</li>
+          <li>Due diligence for investors &amp; lenders</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10233D" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="service-tag">02 / TAXATION</div>
+        </div>
+        <h3>Taxation</h3>
+        <p class="desc">Planning and filing across direct and indirect tax, with representation if a notice ever lands in your inbox.</p>
+        <ul class="service-list">
+          <li>Income tax planning &amp; return filing</li>
+          <li>GST registration, returns &amp; reconciliation</li>
+          <li>TDS/TCS compliance</li>
+          <li>Transfer pricing documentation</li>
+          <li>Assessment &amp; appellate representation</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10233D" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15l4-6 3 4 5-8"/></svg>
+          </div>
+          <div class="service-tag">03 / ADVISORY</div>
+        </div>
+        <h3>Financial Services</h3>
+        <p class="desc">Numbers that inform decisions, from monthly MIS to the model you take into a fundraise.</p>
+        <ul class="service-list">
+          <li>Bookkeeping &amp; monthly MIS</li>
+          <li>Budgeting &amp; cash-flow forecasting</li>
+          <li>Business valuation</li>
+          <li>Fundraising &amp; project finance support</li>
+          <li>Loan syndication &amp; CMA data preparation</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10233D" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          </div>
+          <div class="service-tag">04 / COMPLIANCE</div>
+        </div>
+        <h3>Regulatory Compliance</h3>
+        <p class="desc">Every filing your entity owes to the Registrar, on a calendar you never have to remember yourself.</p>
+        <ul class="service-list">
+          <li>Company incorporation &amp; ROC filings</li>
+          <li>Annual returns (AOC-4, MGT-7)</li>
+          <li>LLP &amp; partnership compliance</li>
+          <li>FEMA &amp; RBI filings</li>
+          <li>Payroll, PF &amp; ESIC compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How We Work</div>
+      <h2>An engagement, in five stages</h2>
+      <p>Audit and compliance work only holds up if the sequence is followed. This is the order we follow on every engagement.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="process-row">
+      <div class="proc-step">
+        <div class="idx">01</div>
+        <h4>Discovery</h4>
+        <p>We review your books, entity structure and past filings to map where you actually stand.</p>
+      </div>
+      <div class="proc-step">
+        <div class="idx">02</div>
+        <h4>Diagnostic</h4>
+        <p>A gap report flags compliance risk, tax exposure and control weaknesses before they become notices.</p>
+      </div>
+      <div class="proc-step">
+        <div class="idx">03</div>
+        <h4>Planning</h4>
+        <p>We agree a calendar of filings, audits and reviews mapped to your statutory deadlines.</p>
+      </div>
+      <div class="proc-step">
+        <div class="idx">04</div>
+        <h4>Execution</h4>
+        <p>Returns are prepared, reviewed by a partner, and filed with acknowledgements shared with you.</p>
+      </div>
+      <div class="proc-step">
+        <div class="idx">05</div>
+        <h4>Standing Support</h4>
+        <p>We remain on record for queries, assessments and notices for as long as the engagement runs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="industries" id="industries">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Who We Serve</div>
+      <h2 style="font-family:var(--serif); font-size:32px; color:var(--ink); font-weight:560; line-height:1.2; margin-bottom:16px;">Sector experience that shortens the learning curve</h2>
+      <p style="color:#4a5261; font-size:15px;">We've sat across the table from finance teams in these industries enough times to know where their compliance risk usually hides.</p>
+    </div>
+    <div class="industry-tags">
+      <span>EdTech</span>
+      <span>BFSI</span>
+      <span>BPO &amp; ITES</span>
+      <span>Manufacturing</span>
+      <span>Real Estate</span>
+      <span>Retail &amp; FMCG</span>
+      <span>Healthcare</span>
+      <span>Startups &amp; VC-backed</span>
+      <span>NGOs &amp; Trusts</span>
+      <span>Hospitality</span>
+      <span>Logistics</span>
+      <span>Agri &amp; Ethanol</span>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2>What clients actually notice</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">01</div>
+        <h4>Partner-led review</h4>
+        <p>Every return is reviewed by a Chartered Accountant before it's filed, not just prepared by staff.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">02</div>
+        <h4>Deadline discipline</h4>
+        <p>We track your compliance calendar so a due date never becomes a penalty.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">03</div>
+        <h4>Transparent fees</h4>
+        <p>Fee structures are agreed upfront in writing &mdash; no surprise invoices mid-engagement.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">04</div>
+        <h4>We show up for notices</h4>
+        <p>If a department writes to you, we draft the response and represent you, not just advise from the sideline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Team</div>
+      <h2>Who you'll actually work with</h2>
+    </div>
+    <div class="team-grid team-grid-solo">
+      <div class="team-card">
+        <div class="avatar">PM</div>
+        <h4>Priyam Mishra</h4>
+        <div class="role">FOUNDER &amp; MANAGING PARTNER, FCA</div>
+        <p>Leads audit, taxation and compliance engagements for mid-market and BFSI clients, with 5+ years in practice advising founders and finance teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Client Notes</div>
+      <h2>Told in their own words</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="mark">&ldquo;</div>
+        <p class="quote">They caught a GST mismatch two quarters before our lender's due diligence team would have. That alone paid for the retainer.</p>
+        <div class="who">CFO, ED-TECH PLATFORM</div>
+      </div>
+      <div class="test-card">
+        <div class="mark">&ldquo;</div>
+        <p class="quote">Our ROC filings used to be a scramble every March. Now they're just a calendar reminder we barely think about.</p>
+        <div class="who">FOUNDER, D2C RETAIL BRAND</div>
+      </div>
+      <div class="test-card">
+        <div class="mark">&ldquo;</div>
+        <p class="quote">When we got an income tax notice, they drafted the response within two days and sat in on the hearing with us.</p>
+        <div class="who">DIRECTOR, MANUFACTURING FIRM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <div class="eyebrow">Get In Touch</div>
+      <h3>Tell us where your books stand</h3>
+      <p style="color:#4a5261; font-size:14.5px; margin-bottom:8px;">Send us a note and a Chartered Accountant will get back to you within one business day &mdash; not a call centre, not a bot.</p>
+      <div class="info-row"><div class="lbl">OFFICE</div><div class="val">A-11/987, Sai Datta Road, Arjunganj, Lucknow, Uttar Pradesh</div></div>
+      <div class="info-row"><div class="lbl">PHONE</div><div class="val">+91 70078 95679</div></div>
+      <div class="info-row"><div class="lbl">EMAIL</div><div class="val">priyam@capriyam.in</div></div>
+      <div class="info-row"><div class="lbl">HOURS</div><div class="val">Monday &ndash; Saturday, 10:00 AM &ndash; 7:00 PM IST</div></div>
+    </div>
+    <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Request Received ✓';">
+      <div class="form-row">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="company">Company</label>
+          <input id="company" type="text" placeholder="Business / entity name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@company.com" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="+91">
+        </div>
+      </div>
+      <div>
+        <label for="service">Service Required</label>
+        <select id="service">
+          <option>Audit &amp; Assurance</option>
+          <option>Taxation</option>
+          <option>Financial Services</option>
+          <option>Regulatory Compliance</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Briefly describe what you need help with"></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Send Enquiry</button>
+      <p class="form-note">Fields marked required must be filled before sending. This form does not submit to a live server in this preview.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark">PM</div>
+          <div class="brand-name">Priyam Mishra &amp; Co.<span>CHARTERED ACCOUNTANTS</span></div>
+        </div>
+        <p>A full-service CA firm handling audit, taxation, financial advisory and compliance for businesses across India. Member firm, Institute of Chartered Accountants of India.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Audit &amp; Assurance</a>
+        <a href="#services">Taxation</a>
+        <a href="#services">Financial Services</a>
+        <a href="#services">Compliance</a>
+      </div>
+      <div class="footer-col">
+        <h5>Firm</h5>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Registered</h5>
+        <a href="#">ICAI Firm Reg. No. 0XXXXXN</a>
+        <a href="#">GSTIN: 09XXXXXXXXXXZ5</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PRIYAM MISHRA &amp; CO. — CHARTERED ACCOUNTANTS. ALL RIGHTS RESERVED.</p>
+      <p>DESIGNED FOR CLARITY, NOT DECORATION.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
